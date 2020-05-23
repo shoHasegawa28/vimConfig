@@ -46,41 +46,44 @@ set showmode
 set cursorcolumn
 
 "" キーマップの設定
+"リーダーキーを設定する
+let mapleader = "\<SPACE>"
 
 " +ファイルフォーマットの変更
 "ESCキー2度押しでハイライトの切り替え
 nnoremap <silent><ESC><ESC> :<C-u>set nohlsearch!<CR>
 
 "「<Space>+<d>」でdosに変更する
-nnoremap <Space>d :setlocal fileformat=dos<CR>
+nnoremap <Leader>d :setlocal fileformat=dos<CR>
 
 "「<Space>+<m>」でmacに変更する
-nnoremap <Space>m :setlocal fileformat=mac<CR>
+nnoremap <Leader>m :setlocal fileformat=mac<CR>
 
 "「<Space>+<u>」でunixに変更する
-nnoremap <Space>u :setlocal fileformat=unix<CR>
+nnoremap <Leader>u :setlocal fileformat=unix<CR>
 
 " +コマンドのユーザ定義
 "「<Space>+<o>」で現在のカーソルの次の行に空白を一行導入する
-nnoremap <Space>o :<C-u>call append(expand('.'), '')<CR>
+nnoremap <Leader>o :<C-u>call append(expand('.'), '')<CR>
 
-"「<Space>+<n>」で行番号の有無を設定できます。
-nnoremap <Space>n :setlocal number! number?<CR>
+"「<Space>+<n>」で新規ファイル作成
+nnoremap <Leader>n :setlocal number! number?<CR>
 
 " 「<Space>+<8>」で文字コードをUTF-8に設定します。
-nnoremap <Space>8 :setlocal fenc=utf-8<CR>
+nnoremap <Leader>8 :setlocal fenc=utf-8<CR>
 
 " 「<space>+<c>」で文字コードをSHIFT-JISに設定します。
-nnoremap <Space>c :setlocal fenc=cp932<CR>
+nnoremap <Leader>c :setlocal fenc=cp932<CR>
 
 "init.vim呼び出し
 cnoremap init: <C-u>edit $MYVIMRC<CR>
 
 "init.vim呼び込む
-noremap <SPACE>s:source $MYVIMRC<CR>
+noremap <Leader>s:source $MYVIMRC<CR>
 
 "jj を ESCキー
 inoremap <silent> jj <ESC>:w<CR>
+
 
 "deinの設定
 if &compatible
