@@ -69,6 +69,9 @@ nnoremap <Leader>8 :setlocal fenc=utf-8<CR>
 " 「<space>+<c>」で文字コードをSHIFT-JISに設定します。
 nnoremap <Leader>c :setlocal fenc=cp932<CR>
 
+" 「<space>+<c>」で文字コードをSHIFT-JISに設定します。
+nnoremap <Leader>m :setlocal fenc=MS932<CR>
+
 "Space + u で　init.vimを開く
 nnoremap <Leader>. :new $MYVIMRC<CR>
 
@@ -80,6 +83,9 @@ nnoremap <Leader><Leader>: v<CR>
 
 "<Space>qで閉じる
 nnoremap <Leader>q :q<CR>
+
+"<Space>qで閉じる
+nnoremap <Leader>Q :q!<CR>
 
 "<Space>w で書き込み
 nnoremap <Leader>w :w<CR>
