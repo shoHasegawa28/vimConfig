@@ -116,6 +116,32 @@ nnoremap <silent> p p`]
 nnoremap <C-j> }
 nnoremap <C-k> {
 
+"Ctrl+h ,Ctrl+l で行頭と行末に移動
+nnoremap <Leader>h 0
+nnoremap <Leader>l $
+
+"対応するかっこの自動生成
+inoremap { {}<LEFT>
+inoremap [ []<LEFT>
+inoremap ( ()<LEFT>
+inoremap " ""<LEFT>
+inoremap ' ''<LEFT>
+
+"git設定
+nnoremap <leader>gs :tab sp<CR>:Gstatus<CR>:only<CR>
+nnoremap <leader>ga :Gwrite<CR>
+nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gl :Git log<CR>
+nnoremap <leader>gh :tab sp<CR>:0Glog<CR>
+" abbrev for `git history`: create new quickfix tab for history
+nnoremap <leader>gp :Gpush<CR>
+nnoremap <leader>gf :Gfetch<CR>
+nnoremap <leader>gd :Gvdiff<CR>
+nnoremap <leader>gr :Grebase -i<CR>
+nnoremap <leader>gg :Ggrep 
+nnoremap <leader>gm :Gmerge 
+
 
 " The prefix key.
 nnoremap    [Tag]   <Nop>
@@ -134,6 +160,8 @@ map <silent> [Tag]n :tabnext<CR>
 " tn 次のタブ
 map <silent> [Tag]p :tabprevious<CR>
 " tp 前のタブ
+map <silent> [Tag]o :tabonly<CR>
+" 今いるタブ以外すべて削除
 
 "deinの設定
 if &compatible
